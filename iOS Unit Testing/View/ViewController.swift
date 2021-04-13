@@ -9,19 +9,34 @@ import UIKit
 
 class ViewController: UITabBarController {
 
+//    override func viewDidLoad() {
+//        super.viewDidLoad()
+//
+//        self.title = "Soup Me"
+//        let story = UIStoryboard(name: "Main", bundle: .main)
+//        let tabOne = story.instantiateViewController(identifier: "FeatureOneViewController")
+//        tabOne.tabBarItem = UITabBarItem(title: "Home", image: UIImage(named: "House"), tag: 1)
+//        let tabTwo = story.instantiateViewController(identifier: "FeatureTwoViewController")
+//        tabTwo.tabBarItem = UITabBarItem(title: "Soup", image: UIImage(named: "Soup"), tag: 2)
+////        let tabThree = story.instantiateViewController(identifier: "FeatureThreeViewController")
+////        tabThree.tabBarItem = UITabBarItem(title: "Downloads", image: UIImage(named: "download"), tag: 3)
+//
+//        self.setViewControllers([tabOne, tabTwo], animated: false)
+//    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.title = "Soup Me"
         let story = UIStoryboard(name: "Main", bundle: .main)
         let tabOne = story.instantiateViewController(identifier: "FeatureOneViewController")
-        tabOne.tabBarItem = UITabBarItem(title: "Home", image: UIImage(named: "House"), tag: 1)
+        tabOne.tabBarItem = UITabBarItem(title: "Home", image: ImageAsset.load(.home), tag: 1)
         let tabTwo = story.instantiateViewController(identifier: "FeatureTwoViewController")
-        tabTwo.tabBarItem = UITabBarItem(title: "Soup", image: UIImage(named: "Soup"), tag: 2)
-        let tabThree = story.instantiateViewController(identifier: "FeatureThreeViewController")
-        tabThree.tabBarItem = UITabBarItem(title: "Downloads", image: UIImage(named: "download"), tag: 3)
+        tabTwo.tabBarItem = UITabBarItem(title: "Soup", image: ImageAsset.load(.soup), tag: 2)
+//        let tabThree = story.instantiateViewController(identifier: "FeatureThreeViewController")
+//        tabThree.tabBarItem = UITabBarItem(title: "Downloads", image: ImageAsset.load(.download), tag: 3)
         
-        self.setViewControllers([tabOne, tabTwo, tabThree], animated: false)
+        self.setViewControllers([tabOne, tabTwo], animated: false)
     }
 
 

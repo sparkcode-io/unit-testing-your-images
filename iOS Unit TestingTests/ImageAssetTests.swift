@@ -1,5 +1,5 @@
 //
-//  iOS_Unit_TestingTests.swift
+//  ImageAssetTests.swift
 //  iOS Unit TestingTests
 //
 //  Created by AJ Bartocci on 4/13/21.
@@ -8,7 +8,7 @@
 import XCTest
 @testable import iOS_Unit_Testing
 
-class iOS_Unit_TestingTests: XCTestCase {
+class ImageAssetTests: XCTestCase {
 
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.
@@ -17,17 +17,11 @@ class iOS_Unit_TestingTests: XCTestCase {
     override func tearDownWithError() throws {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
-
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
-
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
+    
+    func testImagesLoad() {
+        RawImageAsset.allCases.forEach { (asset) in
+            let img = asset.load()
+            XCTAssertNotNil(img, "Unable to load asset: \(asset.rawValue)")
         }
     }
-
 }

@@ -17,9 +17,9 @@ class SoupViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        let soupImg = UIImage(named: "no-soup")!
+        let soupImg = ImageAsset.load(.noSoup)
         imageView.image = soupImg
-        let downloadImg = UIImage(named: "download")!
+        let downloadImg = ImageAsset.load(.download)
         downloadButton.setTitle("", for: .normal)
         downloadButton.setImage(downloadImg, for: .normal)
     }
